@@ -1,2 +1,5 @@
-# front-end-developer
-Become Front-end Developer by building real-life projects, you can use any Front-end frameworks
+# For those who want to:
+- Practice React, Vue, or other front-end libraries
+- Become Front-end developer
+- Building websites with real-life practices
+
