@@ -1,10 +1,10 @@
-import "./App.css";
-import Header from "./components/Header";
-
+import { DrawerProvider } from "./context/DrawerContext";
+import Navbar from "./components/Navbar";
+import StayList from "./components/StayList";
 function App() {
   return (
-    <main id="container">
-      <Header />
+    <main className="md:container mx-auto">
+      <Navbar />
     </main>
   );
 }
