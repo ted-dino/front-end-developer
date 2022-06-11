@@ -5,6 +5,7 @@ function App() {
   return (
     <main className="md:container mx-auto">
       <Navbar />
+      <StayList />
     </main>
   );
 }

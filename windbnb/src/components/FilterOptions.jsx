@@ -1,6 +1,5 @@
-import { useContext } from "react";
-import DrawerContext from "../context/DrawerContext";
 import { useEffect, useRef } from "react";
+import { FaSearch } from "react-icons/fa";
 
 const FilterOptions = (props) => {
   const ref = useRef(null);
@@ -22,20 +21,34 @@ const FilterOptions = (props) => {
   return (
     <div
       ref={ref}
-      className="drawer absolute bg-white w-full h-[460px] inset-0 flex justify-center items-center shadow-md"
+      className="absolute bg-white w-full h-[460px] inset-0 flex justify-center items-center shadow-md"
     >
-      <form className="flex justify-center items-center">
-        <div className="country">
+      <form className="md:container mx-auto flex justify-items-center items-center text-center ">
+        <div className="form-floating  w-full">
           <input
+            placeholder="Never Gonna Give You Up"
             type="text"
             name="location"
             id="location"
-            className="block w-full border "
+            className="form-control placeholder:text-transparent focus:border-[#333333]"
           />
+          <label htmlFor="location">Location</label>
         </div>
-        <div className="guest">- [0] +</div>
-        <div>
-          <button>Search</button>
+        <div className="form-floating w-full ">
+          <input
+            placeholder="Add guest"
+            type="number"
+            name="guest"
+            id="guest"
+            className="form-control placeholder:text-transparent focus:border-[#333333]"
+          />
+          <label htmlFor="guest">Guest</label>
+        </div>
+        <div className="w-full p-4 border">
+          <button className="flex items-center mx-auto">
+            <FaSearch className="fill-btn-primary" />
+            Search
+          </button>
         </div>
       </form>
     </div>

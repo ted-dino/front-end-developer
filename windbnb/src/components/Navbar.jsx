@@ -14,31 +14,20 @@ const Navbar = () => {
     setShowDrawer((prevState) => !prevState);
   };
 
-  useEffect(() => {
-    const closeDrawer = (e) => {
-      if (filterButton.current && !filterButton.current.contains(e.target)) {
-        alert("You clicked outside of me!");
-      }
-    };
-
-    document.body.addEventListener("click", closeDrawer);
-    return () => document.removeEventListener("click", closeDrawer);
-  }, []);
-
   return (
-    <header className="flex py-6 items-center justify-between ">
+    <header className="flex py-6 items-center justify-between">
       <div className="logo">
         <img src={logo} alt="windbnb" />
       </div>
       <button
         ref={filterButton}
         onClick={showOptions}
-        className="filter-button flex items-center rounded-2xl shadow divide-x"
+        className="filter-button flex items-center rounded-2xl shadow divide-x divide-[#F2F2F2]"
       >
-        <div className="py-4 px-4">Helsinki, Finland</div>
-        <div className="py-4 px-4">Add guests</div>
+        <div className="py-4 px-4 text-primary">Helsinki, Finland</div>
+        <div className="py-4 px-4 text-secondary">Add guests</div>
         <div className="py-4 px-4">
-          <FaSearch />
+          <FaSearch className="fill-btn-primary" />
         </div>
       </button>
       <FilterOptions
