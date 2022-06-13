@@ -4,7 +4,7 @@ const Card = ({ image, isHost, beds, type, rating, title }) => {
     <div className="card">
       <div className="card__image">
         <img
-          className="w-full rounded-3xl max-h-64 object-cover"
+          className="w-full rounded-3xl h-64 object-cover"
           src={image}
           alt="feature image"
         />

@@ -23,7 +23,6 @@
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
     appearance: none;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
@@ -35,7 +34,7 @@
     opacity: 1;
   }
 
-  .form-floating > .form-control:focus,
+  /* .form-floating > .form-control:focus, */
   .form-floating > .form-control:not(:placeholder-shown) {
     padding-top: 1.625rem;
     padding-bottom: 0.625rem;
@@ -62,5 +61,10 @@
   .form-floating > .form-control:not(:placeholder-shown) ~ label {
     opacity: 0.65;
     transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  }
+
+  .outline_none {
+    border-color: #000;
+    outline: 1px solid;
   }
 }

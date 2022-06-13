@@ -21,32 +21,32 @@ const FilterOptions = (props) => {
   return (
     <div
       ref={ref}
-      className="absolute bg-white w-full h-[460px] inset-0 flex justify-center items-center shadow-md"
+      className="absolute bg-white w-full md:h-[460px] inset-0 flex justify-center items-center shadow-md"
     >
-      <form className="md:container mx-auto flex justify-items-center items-center text-center ">
-        <div className="form-floating  w-full">
+      <form className="md:container mx-auto flex items-center text-center border divide-x">
+        <div className="form-floating w-full pr-0.5">
           <input
             placeholder="Never Gonna Give You Up"
             type="text"
             name="location"
             id="location"
-            className="form-control placeholder:text-transparent focus:border-[#333333]"
+            className="form-control placeholder:text-transparent  focus:rounded-2xl focus-visible:outline_none"
           />
           <label htmlFor="location">Location</label>
         </div>
-        <div className="form-floating w-full ">
+        <div className="form-floating w-full">
           <input
             placeholder="Add guest"
-            type="number"
+            type="text"
             name="guest"
             id="guest"
-            className="form-control placeholder:text-transparent focus:border-[#333333]"
+            className="form-control placeholder:text-transparent  focus:rounded-2xl focus-visible:outline_none"
           />
           <label htmlFor="guest">Guest</label>
         </div>
-        <div className="w-full p-4 border">
-          <button className="flex items-center mx-auto">
-            <FaSearch className="fill-btn-primary" />
+        <div className="w-full py-0.5">
+          <button className="flex items-center mx-auto py-3.5 px-7 bg-btn-primary text-white rounded-2xl ">
+            <FaSearch />
             Search
           </button>
         </div>

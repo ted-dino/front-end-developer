@@ -2,11 +2,8 @@ import logo from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 import FilterOptions from "./FilterOptions";
-// import { useContext } from "react";
-// import DrawerContext from "../context/DrawerContext";
 
 const Navbar = () => {
-  // const { showDrawer } = useContext(DrawerContext);
   const [showDrawer, setShowDrawer] = useState(false);
   const filterButton = useRef();
 
@@ -24,7 +21,7 @@ const Navbar = () => {
         onClick={showOptions}
         className="filter-button flex items-center rounded-2xl shadow divide-x divide-[#F2F2F2]"
       >
-        <div className="py-4 px-4 text-primary">Helsinki, Finland</div>
+        <div className="py-4 px-4 text-primary">Where do you want to go?</div>
         <div className="py-4 px-4 text-secondary">Add guests</div>
         <div className="py-4 px-4">
           <FaSearch className="fill-btn-primary" />
