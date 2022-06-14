@@ -1,7 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext, useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import FilterContext from "../context/FilterContext";
 
 const FilterOptions = (props) => {
+  const { filterResult } = useContext(FilterContext);
+  const [formData, setFormData] = useState({
+    city: "",
+    maxBeds: 0,
+  });
   const ref = useRef(null);
   const { onClickOutside } = props;
 
@@ -16,6 +22,12 @@ const FilterOptions = (props) => {
       document.removeEventListener("click", handleClickOutside, true);
     };
   }, [onClickOutside]);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    props.onClickOutside(false);
+    filterResult("Turku", 2);
+  };
 
   if (!props.show) return null;
   return (
@@ -45,7 +57,10 @@ const FilterOptions = (props) => {
           <label htmlFor="guest">Guest</label>
         </div>
         <div className="w-full py-0.5">
-          <button className="flex items-center mx-auto py-3.5 px-7 bg-btn-primary text-white rounded-2xl ">
+          <button
+            onClick={handleClick}
+            className="flex items-center mx-auto py-3.5 px-7 bg-btn-primary text-white rounded-2xl "
+          >
             <FaSearch />
             Search
           </button>
