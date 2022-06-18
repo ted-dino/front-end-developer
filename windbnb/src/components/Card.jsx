@@ -6,7 +6,7 @@ const Card = ({ image, isHost, beds, type, rating, title }) => {
       <div className="card__image mb-3.5">
         <a href={image} target="_blank">
           <img
-            className="w-full rounded-3xl h-64 object-cover"
+            className="w-full rounded-3xl h-64 object-cover hover:opacity-75"
             src={image}
             alt="feature image"
           />

@@ -1,13 +1,12 @@
-import { useEffect, useRef, useContext, useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import { useEffect, useRef, useState, useContext } from "react";
 import FilterContext from "../context/FilterContext";
+import { FaSearch } from "react-icons/fa";
+import CityList from "./CityList";
 
 const FilterOptions = (props) => {
-  const { filterResult } = useContext(FilterContext);
-  const [formData, setFormData] = useState({
-    city: "",
-    maxBeds: 0,
-  });
+  const { location, setLocation, guest, setGuest, filterStays } =
+    useContext(FilterContext);
+
   const ref = useRef(null);
   const { onClickOutside } = props;
 
@@ -23,26 +22,34 @@ const FilterOptions = (props) => {
     };
   }, [onClickOutside]);
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     props.onClickOutside(false);
-    filterResult("Turku", 2);
+    filterStays(location, guest);
   };
 
-  if (!props.show) return null;
   return (
     <div
       ref={ref}
-      className="absolute bg-white w-full md:h-[460px] inset-0 flex justify-center items-center shadow-md"
+      className={
+        props.show
+          ? "absolute z-50 bg-white w-full md:h-[460px] inset-0 flex items-center shadow-md duration-700 transition-transform open"
+          : "absolute z-50 bg-white w-full md:h-[460px] inset-0 flex items-center shadow-md duration-700 transition-transform close"
+      }
     >
-      <form className="md:container mx-auto flex items-center text-center border divide-x">
+      <form
+        onSubmit={handleSubmit}
+        className="md:container mx-auto flex items-center text-center border divide-x shadow-sm"
+      >
         <div className="form-floating w-full pr-0.5">
           <input
             placeholder="Never Gonna Give You Up"
             type="text"
             name="location"
             id="location"
-            className="form-control placeholder:text-transparent  focus:rounded-2xl focus-visible:outline_none"
+            onChange={(e) => setLocation(e.target.value)}
+            value={location}
+            className="form-control placeholder:text-transparent focus:rounded-2xl focus-visible:outline_none"
           />
           <label htmlFor="location">Location</label>
         </div>
@@ -52,20 +59,20 @@ const FilterOptions = (props) => {
             type="text"
             name="guest"
             id="guest"
+            value={guest}
+            onChange={(e) => setGuest(e.target.value)}
             className="form-control placeholder:text-transparent  focus:rounded-2xl focus-visible:outline_none"
           />
           <label htmlFor="guest">Guest</label>
         </div>
         <div className="w-full py-0.5">
-          <button
-            onClick={handleClick}
-            className="flex items-center mx-auto py-3.5 px-7 bg-btn-primary text-white rounded-2xl "
-          >
+          <button className="flex items-center mx-auto py-3.5 px-7 bg-btn-primary text-white rounded-2xl ">
             <FaSearch />
             Search
           </button>
         </div>
       </form>
+      adasdasd
     </div>
   );
 };

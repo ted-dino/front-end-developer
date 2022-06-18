@@ -1,22 +1,40 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import stays from "../stays.json";
 
 const FilterContext = createContext();
+
 export function FilterProvider({ children }) {
   const [items, setItems] = useState(stays);
+  const [location, setLocation] = useState("");
+  const [guest, setGuest] = useState("");
 
-  const filterResult = (location, guest) => {
-    const result = items.filter((item) => {
-      return (
-        location.toLowerCase() === item.city.toLowerCase() &&
-        guest <= item.maxGuests
-      );
-    });
-    setItems(result);
+  const filterStays = (city, people) => {
+    if (city === "" && people === "") {
+      return;
+    } else {
+      const filteredResult = stays.filter((property) => {
+        return (
+          property.maxGuests >= people &&
+          property.city.toLowerCase() === city.toLowerCase()
+        );
+      });
+      setItems(filteredResult);
+    }
   };
 
   return (
-    <FilterContext.Provider value={{ items, filterResult }}>
+    <FilterContext.Provider
+      value={{
+        stays,
+        items,
+        setItems,
+        filterStays,
+        location,
+        setLocation,
+        guest,
+        setGuest,
+      }}
+    >
       {children}
     </FilterContext.Provider>
   );
