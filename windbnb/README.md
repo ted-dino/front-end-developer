@@ -38,6 +38,7 @@
 - [React](https://reactjs.org/)
 - [Tailwind](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
+- Context API
 
 ## Features
 
