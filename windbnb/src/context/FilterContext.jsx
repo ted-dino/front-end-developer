@@ -7,10 +7,17 @@ export function FilterProvider({ children }) {
   const [items, setItems] = useState(stays);
   const [location, setLocation] = useState("");
   const [guest, setGuest] = useState("");
+  const [showCity, setShowCity] = useState(false);
+  const [showGuest, setShowGuest] = useState(false);
 
   const filterStays = (city, people) => {
-    if (city === "" && people === "") {
+    if (!city && !people) {
       return;
+    } else if (!city && people) {
+      const filteredResult = stays.filter((property) => {
+        return property.maxGuests >= people;
+      });
+      setItems(filteredResult);
     } else {
       const filteredResult = stays.filter((property) => {
         return (
@@ -33,6 +40,10 @@ export function FilterProvider({ children }) {
         setLocation,
         guest,
         setGuest,
+        showCity,
+        setShowCity,
+        showGuest,
+        setShowGuest,
       }}
     >
       {children}

@@ -25,8 +25,11 @@ const Navbar = () => {
   };
 
   return (
-    <header className="flex py-6 items-center justify-between">
-      <div className="logo cursor-pointer" onClick={reloadPage}>
+    <header className="flex gap-8 py-6 items-center sm:items-center sm:justify-between flex-wrap flex-col sm:flex-row">
+      <div
+        className="logo cursor-pointer self-start sm:self-auto"
+        onClick={reloadPage}
+      >
         <img src={logo} alt="windbnb" />
       </div>
       <button
@@ -34,12 +37,12 @@ const Navbar = () => {
         onClick={showOptions}
         className="filter-button flex items-center rounded-2xl shadow divide-x divide-[#F2F2F2]"
       >
-        <div className="py-4 px-4 text-primary">
+        <div className="py-4 px-4 text-primary text-sm">
           {location
             ? `${formatString(location)}, Finland`
             : "Where do you want to go?"}
         </div>
-        <div className="py-4 px-4 text-secondary">
+        <div className="py-4 px-4 text-secondary text-sm">
           {guest ? `${guest} guest(s)` : "Add guests"}
         </div>
         <div className="py-4 px-4">

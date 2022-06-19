@@ -2,7 +2,7 @@ import { FaStar } from "react-icons/fa";
 
 const Card = ({ image, isHost, beds, type, rating, title }) => {
   return (
-    <div className="card flex justify-between flex-col">
+    <div>
       <div className="card__image mb-3.5">
         <a href={image} target="_blank">
           <img
