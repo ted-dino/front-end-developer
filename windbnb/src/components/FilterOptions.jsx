@@ -11,9 +11,7 @@ const FilterOptions = (props) => {
     guest,
     setGuest,
     filterStays,
-    showCity,
     setShowCity,
-    showGuest,
     setShowGuest,
   } = useContext(FilterContext);
 

@@ -3,9 +3,14 @@ import { useContext, useState, useEffect } from "react";
 import FilterContext from "../context/FilterContext";
 
 const GuestOption = () => {
-  const { showGuest, setGuest } = useContext(FilterContext);
-  const [adultCount, setAdultCount] = useState(0);
-  const [childCount, setChildCount] = useState(0);
+  const {
+    showGuest,
+    setGuest,
+    adultCount,
+    setAdultCount,
+    childCount,
+    setChildCount,
+  } = useContext(FilterContext);
 
   useEffect(() => {
     setGuest(adultCount + childCount);

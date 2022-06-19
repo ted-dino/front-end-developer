@@ -9,6 +9,8 @@ export function FilterProvider({ children }) {
   const [guest, setGuest] = useState("");
   const [showCity, setShowCity] = useState(false);
   const [showGuest, setShowGuest] = useState(false);
+  const [adultCount, setAdultCount] = useState(0);
+  const [childCount, setChildCount] = useState(0);
 
   const filterStays = (city, people) => {
     if (!city && !people) {
@@ -44,6 +46,10 @@ export function FilterProvider({ children }) {
         setShowCity,
         showGuest,
         setShowGuest,
+        adultCount,
+        setAdultCount,
+        childCount,
+        setChildCount,
       }}
     >
       {children}

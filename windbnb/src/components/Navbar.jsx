@@ -5,8 +5,16 @@ import FilterOptions from "./FilterOptions";
 import FilterContext from "../context/FilterContext";
 
 const Navbar = () => {
-  const { stays, setItems, location, setLocation, setGuest, guest } =
-    useContext(FilterContext);
+  const {
+    stays,
+    setItems,
+    location,
+    setLocation,
+    setGuest,
+    guest,
+    setAdultCount,
+    setChildCount,
+  } = useContext(FilterContext);
   const [showDrawer, setShowDrawer] = useState(false);
   const filterButton = useRef();
 
@@ -18,6 +26,8 @@ const Navbar = () => {
     setItems(stays);
     setLocation("");
     setGuest("");
+    setAdultCount(0);
+    setChildCount(0);
   };
 
   const formatString = (city) => {
