@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Raleway:wght@700&display=swap");
+/* CSS RESET LINK : https://www.joshwcomeau.com/css/custom-css-reset/ */
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+#root {
+  isolation: isolate;
+}
+
+:root {
+  --ff-raleway: "Raleway", sans-serif;
+  --ff-montserrat: "Montserrat", sans-serif;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-montserrat);
+}
+
+.d-flex {
+  display: flex;
+}
+
+#container {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1.875rem;
+  min-height: 100vh;
+}
+
+#todo-container {
+  flex-direction: column;
+  position: relative;
+  width: 37.5rem;
+  margin: 6.25rem auto 0;
+  word-break: break-all;
+  flex: 1;
+}
+
+#container h1 {
+  font-family: var(--ff-raleway);
+  font-size: 2.25rem;
+}
+
+.tabs {
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  position: relative;
+  outline: none;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: rgb(88, 147, 241);
+  border-radius: 4px 4px 0px 0px;
+}
+
+button {
+  border: none;
+  font-size: 0.875rem;
+  color: #333333;
+}
+
+.content {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.active-content {
+  display: block;
+}
+
+.form {
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5625rem;
+}
+.form div {
+  flex: 1;
+}
+
+.form button {
+  padding: 1.25rem 2.5rem;
+}
+
+.form-floating {
+  position: relative;
+}
+.form-control::placeholder {
+  opacity: 1;
+  color: transparent;
+}
+
+.form-floating > .form-control {
+  padding: 1rem 0.75rem;
+  width: 100%;
+  line-height: 1.25;
+}
+.form-floating > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem 0.75rem;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  /* opacity: 0.65; */
+  transform: scale(0.85) translateY(-1.7rem) translateX(0.55rem);
+  background-color: white;
+}
