@@ -43,6 +43,10 @@ body {
   display: flex;
 }
 
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
 #container {
   align-items: center;
   flex-direction: column;
@@ -60,6 +64,9 @@ body {
   flex: 1;
 }
 
+#tab-container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+}
 #container h1 {
   font-family: var(--ff-raleway);
   font-size: 2.25rem;
@@ -89,7 +96,7 @@ body {
   border-radius: 4px 4px 0px 0px;
 }
 
-button {
+.tabs-btn {
   border: none;
   font-size: 0.875rem;
   color: #333333;
@@ -117,21 +124,30 @@ button {
 }
 
 .form button {
-  padding: 1.25rem 2.5rem;
+  padding: 1.1rem 2.5rem;
 }
 
 .form-floating {
   position: relative;
 }
+
+.form-control {
+  border: 1px solid #bdbdbd;
+  border-radius: 0.75rem;
+}
+
 .form-control::placeholder {
   opacity: 1;
   color: transparent;
 }
 
+.form-control:focus-visible {
+  outline: none;
+}
+
 .form-floating > .form-control {
   padding: 1rem 0.75rem;
   width: 100%;
-  line-height: 1.25;
 }
 .form-floating > label {
   position: absolute;
@@ -142,10 +158,36 @@ button {
   border: 1px solid transparent;
   transform-origin: 0 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  color: #828282;
 }
 .form-floating > .form-control:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label {
-  /* opacity: 0.65; */
-  transform: scale(0.85) translateY(-1.7rem) translateX(0.55rem);
+  padding: 0;
+  margin-left: 5px;
+  transform: scale(0.85) translateY(-0.7rem) translateX(0.55rem);
   background-color: white;
+}
+
+.form-btn {
+  background: #2f80ed;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+}
+
+.todo-list {
+  margin-top: 1.875rem;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.todo input {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.todo label {
+  margin-left: 0.625rem;
+  font-size: 1.125rem;
 }
