@@ -1,23 +1,11 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import TodoContext from "./context/TodoContext";
 import AllTodos from "./component/AllTodos";
 import Active from "./component/Active";
 import Completed from "./component/Completed";
 
 function App() {
-  const activeTab = localStorage.getItem("activeTab");
-  const todoList = JSON.parse(localStorage.getItem("todos"));
-  const [toggleState, setToggleState] = useState(
-    activeTab ? parseInt(activeTab) : 1
-  );
-  const [todos, setTodos] = useState(todoList ? todoList : []);
-
-  useEffect(() => {
-    localStorage.setItem("activeTab", toggleState);
-  }, [toggleState]);
-
-  const toggleTab = (index) => {
-    setToggleState(index);
-  };
+  const { toggleState, toggleTab } = useContext(TodoContext);
   return (
     <div id="container" className="d-flex">
       <h1>#todo</h1>
@@ -55,7 +43,7 @@ function App() {
               toggleState === 1 ? "content  active-content" : "content"
             }
           >
-            <AllTodos setTodos={setTodos} todos={todos} />
+            <AllTodos />
           </div>
 
           <div
