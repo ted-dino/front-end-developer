@@ -60,7 +60,6 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/8Y3J4ucAMQpSnYTwwWW8) was to build an application to complete the given user stories.
 
-
 ## How To Use
 
 <!-- For example: -->
@@ -82,9 +81,8 @@ $ npm start
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+- [How to randomize (shuffle) a JavaScript array](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array#:~:text=you%20can%20do%20it%20easily%20with%20map%20and%20sort%3A)
+- [How to get a number of random elements from an array?](https://stackoverflow.com/questions/19269545/how-to-get-a-number-of-random-elements-from-an-array#:~:text=279-,Just%20two%20lines%20%3A,-//%20Shuffle%20array%0Aconst)
 
 ## Contact
 
