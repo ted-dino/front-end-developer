@@ -71,22 +71,36 @@ h1 {
 button {
   cursor: pointer;
   padding: 0.625rem 1.25rem;
-  width: 100%;
   border-radius: 0.75rem;
-  border: 2px solid var(--primary-clr);
+}
+
+.btn-choice {
+  width: 100%;
   font-weight: 500;
   gap: 2.8125rem;
   color: var(--secondary-clr);
+  border: 2px solid var(--secondary-clr);
   border-color: var(--secondary-clr);
 }
 
-button:hover {
+.btn-choice:hover {
   background-color: var(--accent-clr);
   border-color: var(--accent-clr);
 }
 
-button:hover span {
+.btn-choice:hover span {
   color: var(--common-clr);
+}
+
+.btn-next {
+  padding-inline: 37px;
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  background-color: var(--accent-clr);
+  border: none;
+  color: var(--common-clr);
+  font-weight: 700;
 }
 
 .d-flex {
@@ -97,8 +111,14 @@ button:hover span {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .question {
-  max-width: 29rem;
+  flex-direction: column;
+  width: 29rem;
+  min-height: 689px;
   position: relative;
   padding: 3.75rem 1.875rem;
   background-color: var(--common-clr);
@@ -135,4 +155,23 @@ button:hover span {
 
 .choice-answer {
   font-size: 1.125rem;
+}
+
+.loader {
+  margin: auto;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
