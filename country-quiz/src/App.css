@@ -77,7 +77,7 @@ button {
 .btn-choice {
   width: 100%;
   font-weight: 500;
-  gap: 2.8125rem;
+  gap: 1.25rem;
   color: var(--secondary-clr);
   border: 2px solid var(--secondary-clr);
   border-color: var(--secondary-clr);
