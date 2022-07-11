@@ -157,6 +157,21 @@ button {
   font-size: 1.125rem;
 }
 
+.correct-answer {
+  background-color: var(--correct-answer-clr);
+  color: var(--common-clr);
+}
+
+.incorrect {
+  background-color: #ea8282;
+  color: white;
+  border: 2px solid #ea8282;
+}
+
+.incorrect:hover {
+  background-color: #ea8282;
+}
+
 .loader {
   margin: auto;
   border: 10px solid #f3f3f3;
