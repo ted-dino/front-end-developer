@@ -17,4 +17,9 @@
     --btn-secondary: #585676;
     --btn-accent: #3c47e9;
   }
+
+  body,
+  html {
+    font-family: var(--ff-raleway);
+  }
 }
