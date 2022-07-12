@@ -83,6 +83,7 @@ $ npm start
 
 - [Weather Forecast API](https://www.visualcrossing.com/)
 - [Weather Icons](https://github.com/visualcrossing/WeatherIcons)
+- [SVG ICONS](https://heroicons.com/)
 
 ## Contact
 
