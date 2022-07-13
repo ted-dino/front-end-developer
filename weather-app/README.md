@@ -86,6 +86,7 @@ $ npm start
 - [SVG ICONS](https://heroicons.com/)
 - [Updata array in zustand](https://javascript.plainenglish.io/using-zustand-and-typescript-to-make-a-to-do-list-in-react-fe4a41e76748)
 - [Check if one element exists in an array of objects](https://stackoverflow.com/questions/43519171/check-if-one-element-exists-in-an-array-of-objects?answertab=scoredesc#tab-top)
+- [Handle mouse hover events over a mapped array in React](https://stackoverflow.com/questions/67501705/handle-mouse-hover-events-over-a-mapped-array-in-react)
 
 ## Contact
 
