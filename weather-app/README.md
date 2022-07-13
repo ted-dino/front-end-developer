@@ -84,6 +84,8 @@ $ npm start
 - [Weather Forecast API](https://www.visualcrossing.com/)
 - [Weather Icons](https://github.com/visualcrossing/WeatherIcons)
 - [SVG ICONS](https://heroicons.com/)
+- [Updata array in zustand](https://javascript.plainenglish.io/using-zustand-and-typescript-to-make-a-to-do-list-in-react-fe4a41e76748)
+- [Check if one element exists in an array of objects](https://stackoverflow.com/questions/43519171/check-if-one-element-exists-in-an-array-of-objects?answertab=scoredesc#tab-top)
 
 ## Contact
 
