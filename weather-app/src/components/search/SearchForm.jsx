@@ -1,9 +1,11 @@
 import SearchList from "./SearchList";
-import useStore from "../../hooks/WeatherHook";
+import useStore from "../../hooks/weatherHook";
+import slideStore from "../../hooks/sliderHook";
 import { useState } from "react";
 
 const SearchForm = () => {
   const { addToSearchList, searchList } = useStore();
+  const { isOpen, closeSlider } = slideStore();
   const [query, setQuery] = useState("");
 
   const handleClick = (e) => {
@@ -15,11 +17,16 @@ const SearchForm = () => {
       addToSearchList(query);
     }
     setQuery("");
+    closeSlider();
   };
 
   return (
-    <div className="flex flex-col items-center gap-10 bg-color-secondary w-full md:max-w-md min-h-screen absolute top-0 pt-5 px-3 lg:px-12">
-      <div className="self-end cursor-pointer">
+    <div
+      className={`flex flex-col items-center gap-10 bg-color-secondary w-full md:max-w-md min-h-screen absolute inset-y-0 left-0  z-50 pt-5 px-3 lg:px-12 duration-700 transition-transform ${
+        isOpen ? "translate-x-px" : "translate-x-[-100%]"
+      }`}
+    >
+      <div className="self-end cursor-pointer" onClick={closeSlider}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
