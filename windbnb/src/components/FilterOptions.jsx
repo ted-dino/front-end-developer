@@ -43,8 +43,8 @@ const FilterOptions = (props) => {
       ref={ref}
       className={
         props.show
-          ? "absolute z-50 bg-white w-full h-2/4 p-5 sm:p-0sm:h-[460px] inset-0 shadow-md duration-700 transition-transform open"
-          : "absolute z-50 bg-white w-full h-2/4 p-5 sm:p-0sm:h-[460px] inset-0 shadow-md duration-700 transition-transform close"
+          ? "absolute z-50 bg-white w-full h-2/4 p-5 sm:p-0 sm:h-[460px] inset-0 shadow-md duration-700 transition-transform open"
+          : "absolute z-50 bg-white w-full h-2/4 p-5 sm:p-0 sm:h-[460px] inset-0 shadow-md duration-700 transition-transform close"
       }
     >
       <div className="h-full sm:h-auto relative">
