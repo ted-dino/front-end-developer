@@ -12,6 +12,7 @@ module.exports = {
         "btn-primary": "#6e707a",
         "btn-secondary": "#585676",
         "btn-accent": "#3c47e9",
+        "border-color": "#616475",
       },
     },
   },
