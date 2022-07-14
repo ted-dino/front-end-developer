@@ -7,7 +7,7 @@ const useImage = (fileName) => {
     const fetchImage = async () => {
       try {
         const response = await import(
-          `../assets/weather-icons/${fileName}.png`
+          `../assets/weather-icons/${fileName}.svg`
         );
         setImage(response.default);
       } catch (err) {
