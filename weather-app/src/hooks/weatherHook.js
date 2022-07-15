@@ -2,13 +2,14 @@ import create from "zustand";
 
 const API_KEY = "CSKW65FQSTGUR8YJC5JMM7MMA";
 
-const useStore = create((set) => ({
+const useStore = create((set, get) => ({
   locationWeather: [],
   isLoading: false,
-  unitGroup: "",
+  unitGroup: "metric",
   searchList: [],
-  fetchData: async (city, unit) => {
+  fetchData: async (city) => {
     set((state) => ({ isLoading: (state.isLoading = true) }));
+    const unit = get().unitGroup;
     const response = await fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=${unit}&include=current%2Cdays&key=${API_KEY}&contentType=json`
     );
@@ -24,6 +25,9 @@ const useStore = create((set) => ({
         },
       ],
     }));
+  },
+  changeUnit: (unit) => {
+    set({ unitGroup: unit });
   },
 }));
 
