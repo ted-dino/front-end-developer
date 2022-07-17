@@ -89,6 +89,7 @@ $ npm start
 - [Handle mouse hover events over a mapped array in React](https://stackoverflow.com/questions/67501705/handle-mouse-hover-events-over-a-mapped-array-in-react)
 - [Import image dynamically in React component](https://stackoverflow.com/questions/53775936/import-image-dynamically-in-react-component#:~:text=8-,for,-anyone%20looking%20for)
 - [How can I pass an SVG and some markup as a React prop?](https://stackoverflow.com/questions/57929557/how-can-i-pass-an-svg-and-some-markup-as-a-react-prop#:~:text=here's%20a%20working%20example%20of%20that%20setup%3A%20)
+- [Converting wind direction in angles to text words](https://stackoverflow.com/questions/7490660/converting-wind-direction-in-angles-to-text-words/7490772#:~:text=38-,here,-'s%20a%20javascript)
 
 ## Contact
 
