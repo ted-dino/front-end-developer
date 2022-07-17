@@ -17,6 +17,31 @@
     background-color: #100e1d;
     color: #e7e7eb;
   }
+  progress::-webkit-progress-bar {
+    background-color: #ffec65;
+  }
+
+  progress::-webkit-progress-value {
+    background-color: #ffec65 !important;
+  }
+
+  /* For Firefox */
+  progress {
+    background-color: #ffec65;
+  }
+
+  progress::-moz-progress-bar {
+    background-color: #ffec65 !important;
+  }
+
+  /* For IE10 */
+  progress {
+    background-color: #ffec65;
+  }
+
+  progress {
+    background-color: #ffec65;
+  }
 }
 
 @layer components {
