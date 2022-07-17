@@ -9,17 +9,20 @@ import Button from "../Button";
 import Spinner from "../Spinner";
 
 const CurrentWeather = () => {
-  const { locationWeather, fetchData, isLoading, unitGroup } = useStore();
+  const { locationWeather, fetchData, isLoading, unitGroup, isError } =
+    useStore();
   const { openSlider } = sliderHook();
 
   useEffect(() => {
-    fetchData("Sorsogon");
+    fetchData();
   }, [fetchData, unitGroup]);
 
   return (
     <section className="current-weather flex flex-col justify-around items-center gap-5 bg-color-secondary min-h-screen pt-5 px-3 lg:px-12">
-      {isLoading ? (
+      {isLoading && !isError ? (
         <Spinner />
+      ) : isError ? (
+        <h1>Invalid Request. Please try again.</h1>
       ) : (
         <>
           <div className="flex items-center justify-between w-full">

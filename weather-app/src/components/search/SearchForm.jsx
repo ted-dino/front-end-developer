@@ -5,7 +5,8 @@ import { useState } from "react";
 import Button from "../Button";
 
 const SearchForm = () => {
-  const { addToSearchList, searchList } = useStore();
+  const { addToSearchList, searchList, fetchData, city, changeCity } =
+    useStore();
   const { isOpen, closeSlider } = slideStore();
   const [query, setQuery] = useState("");
 
@@ -16,6 +17,8 @@ const SearchForm = () => {
     );
     if (!queryExists && query.trim().length !== 0) {
       addToSearchList(query);
+      changeCity(query);
+      fetchData();
     }
     setQuery("");
     closeSlider();

@@ -9,13 +9,13 @@ const Index = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold">Today's Highlight</h2>
+      <h2 className="text-2xl font-bold my-8">Today's Highlight</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <HighlightCard className="text-center bg-color-secondary h-52 flex flex-col justify-around">
           <span className="font-medium">Wind Status</span>
           <div className="flex justify-center items-baseline">
             <span className="text-6xl">
-              {roundValue(currentCondition?.windspeed)}
+              {roundValue(currentCondition.windspeed)}
             </span>
             <span className="text-3xl">
               {unitGroup === "metric" ? "kph" : "mph"}
@@ -23,7 +23,7 @@ const Index = () => {
           </div>
           <div>
             <span className="text-sm">
-              {convertDirection(currentCondition?.winddir)}
+              {convertDirection(currentCondition.winddir)}
             </span>
           </div>
         </HighlightCard>
@@ -31,7 +31,7 @@ const Index = () => {
           <span className="font-medium">Humidity</span>
           <div>
             <span className="text-6xl">
-              {roundValue(currentCondition?.humidity)}
+              {roundValue(currentCondition.humidity)}
             </span>
             <span className="text-3xl">%</span>
           </div>
@@ -43,9 +43,9 @@ const Index = () => {
             </div>
             <div className="bg-text-primary rounded-full overflow-hidden">
               <span
-                className={`block h-2 w-[${roundValue(
-                  currentCondition?.humidity
-                )}%] bg-[#FFEC65]`}
+                className={`block h-2 bg-[#FFEC65] w-[${roundValue(
+                  currentCondition.humidity
+                )}%]`}
               ></span>
             </div>
             <span className="w-full block text-right text-xs font-bold text-text-secondary">
@@ -55,9 +55,9 @@ const Index = () => {
         </HighlightCard>
         <HighlightCard className="text-center bg-color-secondary h-40 flex flex-col justify-evenly">
           <span className="font-medium">Visibility</span>
-          <div>
+          <div className="flex items-center flex-col justify-center md:flex-row md:items-baseline">
             <span className="text-6xl">
-              {roundValue(currentCondition?.visibility)}
+              {roundValue(currentCondition.visibility)}
             </span>
             <span className="text-3xl">
               {unitGroup === "metric" ? "kilometers" : "miles"}
@@ -66,9 +66,9 @@ const Index = () => {
         </HighlightCard>
         <HighlightCard className="text-center bg-color-secondary h-40 flex flex-col justify-evenly">
           <span className="font-medium">Air Pressure</span>
-          <div>
+          <div className="flex items-center flex-col justify-center sm:flex-row sm:items-baseline">
             <span className="text-6xl">
-              {roundValue(currentCondition?.pressure)}
+              {roundValue(currentCondition.pressure)}
             </span>
             <span className="text-3xl">
               {unitGroup === "metric" ? "kPa" : "mb"}
