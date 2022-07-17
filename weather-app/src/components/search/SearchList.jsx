@@ -1,5 +1,6 @@
 import { useState } from "react";
-import useStore from "../../hooks/WeatherHook";
+import useStore from "../../hooks/weatherHook";
+import formatString from "../../utils/formatString";
 
 const SearchList = () => {
   const searchList = useStore((state) => state.searchList);
@@ -7,7 +8,7 @@ const SearchList = () => {
 
   return (
     <>
-      <ul className="w-full flex flex-col gap-3">
+      <ul className="w-full flex flex-col gap-3 max-w-[352px]">
         {searchList.length > 0 &&
           searchList.map((query, index) => (
             <li
@@ -16,7 +17,7 @@ const SearchList = () => {
               onMouseEnter={(e) => setIsHovered(index)}
               onMouseLeave={() => setIsHovered(-1)}
             >
-              {query.query}
+              {formatString(query.query)}
               {isHovered === index && (
                 <span>
                   <svg

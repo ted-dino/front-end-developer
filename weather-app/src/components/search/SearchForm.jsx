@@ -2,6 +2,7 @@ import SearchList from "./SearchList";
 import useStore from "../../hooks/weatherHook";
 import slideStore from "../../hooks/sliderHook";
 import { useState } from "react";
+import Button from "../Button";
 
 const SearchForm = () => {
   const { addToSearchList, searchList } = useStore();
@@ -22,8 +23,8 @@ const SearchForm = () => {
 
   return (
     <div
-      className={`flex flex-col items-center gap-10 bg-color-secondary w-full md:max-w-md min-h-screen absolute inset-y-0 left-0  z-50 pt-5 px-3 lg:px-12 duration-700 transition-transform ${
-        isOpen ? "translate-x-px" : "translate-x-[-100%]"
+      className={`flex flex-col items-center gap-10 bg-color-secondary w-full lg:max-w-md min-h-screen absolute inset-y-0 left-0  z-50 pt-5 px-3 lg:px-12 duration-700 transition-transform ${
+        isOpen ? "translate-x-px" : "-translate-x-full"
       }`}
     >
       <div className="self-end cursor-pointer" onClick={closeSlider}>
@@ -51,13 +52,9 @@ const SearchForm = () => {
           onChange={(e) => setQuery(e.target.value)}
           className="w-full max-w-[268px] pl-8 lg:pl-12 bg-transparent border border-text-primary focus-visible:outline-none"
         />
-        <button
-          type="submit"
-          className="bg-btn-accent py-3.5 px-5"
-          onClick={handleClick}
-        >
+        <Button className="bg-btn-accent py-3.5 px-5" onClick={handleClick}>
           Search
-        </button>
+        </Button>
         <div className="absolute inset-y-0 left-0 pl-2 lg:pl-4 flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
