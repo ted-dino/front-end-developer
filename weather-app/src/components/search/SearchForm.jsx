@@ -1,7 +1,7 @@
-import SearchList from "./SearchList";
+import { useState } from "react";
 import useStore from "../../hooks/weatherHook";
 import slideStore from "../../hooks/sliderHook";
-import { useState } from "react";
+import SearchList from "./SearchList";
 import Button from "../Button";
 
 const SearchForm = () => {
@@ -10,18 +10,24 @@ const SearchForm = () => {
   const { isOpen, closeSlider } = slideStore();
   const [query, setQuery] = useState("");
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const queryExists = searchList.some(
       (el) => el.query.toLowerCase() === query.toLowerCase()
     );
-    if (!queryExists && query.trim().length !== 0) {
-      addToSearchList(query);
-      changeCity(query);
-      fetchData();
+
+    if (query.trim().length !== 0) {
+      if (!queryExists) {
+        addToSearchList(query);
+        changeCity(query);
+        fetchData();
+      } else {
+        changeCity(query);
+        fetchData();
+      }
     }
-    setQuery("");
     closeSlider();
+    setQuery("");
   };
 
   return (
@@ -45,7 +51,7 @@ const SearchForm = () => {
         </svg>
       </div>
 
-      <form className="relative flex gap-3">
+      <form onSubmit={handleSubmit} className="relative flex gap-3">
         <input
           type="text"
           name="city"
@@ -55,9 +61,7 @@ const SearchForm = () => {
           onChange={(e) => setQuery(e.target.value)}
           className="w-full max-w-[268px] pl-8 lg:pl-12 bg-transparent border border-text-primary focus-visible:outline-none"
         />
-        <Button className="bg-btn-accent py-3.5 px-5" onClick={handleClick}>
-          Search
-        </Button>
+        <Button className="bg-btn-accent py-3.5 px-5">Search</Button>
         <div className="absolute inset-y-0 left-0 pl-2 lg:pl-4 flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -6,7 +6,7 @@ const WeatherCondition = () => {
   const condition = locationWeather?.currentConditions?.conditions;
 
   return (
-    <div>
+    <div className="text-center">
       <span className="text-4xl text-text-secondary font-semibold">
         {condition && formatString(condition)}
       </span>

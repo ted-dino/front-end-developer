@@ -1,7 +1,7 @@
 import sliderHook from "../../hooks/sliderHook";
 import useStore from "../../hooks/weatherHook";
+import { useEffect, useState } from "react";
 import WeatherIcon from "../WeatherIcon";
-import { useEffect } from "react";
 import WeatherTemp from "../WeatherTemp";
 import WeatherCondition from "./WeatherCondition";
 import WeatherDay from "./WeatherDay";
@@ -9,20 +9,31 @@ import Button from "../Button";
 import Spinner from "../Spinner";
 
 const CurrentWeather = () => {
-  const { locationWeather, fetchData, isLoading, unitGroup, isError } =
-    useStore();
+  const { locationWeather, isLoading, isError, changeCity, city } = useStore();
   const { openSlider } = sliderHook();
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData, unitGroup]);
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser");
+    } else {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          changeCity([position.coords.latitude, position.coords.longitude]);
+        },
+        () => {
+          alert("Unable to retrieve your location");
+        }
+      );
+    }
+    console.log(typeof city);
+  };
 
   return (
     <section className="current-weather flex flex-col justify-around items-center gap-5 bg-color-secondary min-h-screen pt-5 px-3 lg:px-12">
       {isLoading && !isError ? (
         <Spinner />
       ) : isError ? (
-        <h1>Invalid Request. Please try again.</h1>
+        <h1>Something went wrong. Please try again.</h1>
       ) : (
         <>
           <div className="flex items-center justify-between w-full">
@@ -33,7 +44,10 @@ const CurrentWeather = () => {
               Search for places
             </Button>
 
-            <Button className="p-2.5 rounded-full bg-btn-primary">
+            <Button
+              className="p-2.5 rounded-full bg-btn-primary"
+              onClick={() => getLocation()}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -55,10 +69,12 @@ const CurrentWeather = () => {
               </svg>
             </Button>
           </div>
-          <WeatherIcon
-            weatherIcon={locationWeather?.currentConditions?.icon}
-            className={"w-[150px] h-[174px] object-contain"}
-          />
+          {locationWeather?.currentConditions?.icon && (
+            <WeatherIcon
+              weatherIcon={locationWeather?.currentConditions?.icon}
+              className={"w-[150px] h-[174px] object-contain"}
+            />
+          )}
           <WeatherTemp
             temp={locationWeather?.currentConditions?.temp}
             tempClassname={"text-[144px] font-medium"}

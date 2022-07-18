@@ -41,13 +41,14 @@ const Index = () => {
               <span>50</span>
               <span>100</span>
             </div>
-            <div className="bg-text-primary rounded-full overflow-hidden">
-              <span
-                className={`block h-2 bg-[#FFEC65] w-[${roundValue(
-                  currentCondition.humidity
-                )}%]`}
-              ></span>
-            </div>
+            <progress
+              id="progress"
+              className="w-full h-2 bg-text-primary rounded-full overflow-hidden"
+              value={`${roundValue(currentCondition.humidity)}`}
+              max="100"
+            >
+              {roundValue(currentCondition.humidity)}
+            </progress>
             <span className="w-full block text-right text-xs font-bold text-text-secondary">
               %
             </span>

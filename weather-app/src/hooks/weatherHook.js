@@ -13,9 +13,10 @@ const useStore = create((set, get) => ({
     try {
       set((state) => ({ isLoading: (state.isLoading = true) }));
       const unit = get().unitGroup;
-      const city = get().city;
+      let city = get().city;
+      const query = typeof city === "string" ? city : `${city[0]},${city[1]}`;
       const response = await fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=${unit}&include=current%2Cdays&key=${API_KEY}&contentType=json`
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${query}?unitGroup=${unit}&include=current%2Cdays&key=${API_KEY}&contentType=json`
       );
       set({ locationWeather: await response.json() });
       set((state) => ({ isLoading: (state.isLoading = false) }));
@@ -23,6 +24,7 @@ const useStore = create((set, get) => ({
       set((state) => ({ isError: (state.isError = error) }));
     }
   },
+
   addToSearchList: (query) => {
     set((state) => ({
       searchList: [

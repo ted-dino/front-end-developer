@@ -1,5 +1,5 @@
 import { isTomorrow, parseISO } from "date-fns";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TempButton from "../Button";
 import useStore from "../../hooks/weatherHook";
 import formatDate from "../../utils/formatDate";
