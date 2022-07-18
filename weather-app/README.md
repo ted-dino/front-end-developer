@@ -1,6 +1,4 @@
-<!-- Please update value in the {}  -->
-
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">Weather App</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -8,11 +6,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://weath3r-app.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://devchallenges.io/solutions/U4KTSTMe1zwIcL6P5U4w">
       Solution
     </a>
     <span> | </span>
@@ -22,41 +20,31 @@
   </h3>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
 ## Table of Contents
 
 - [Overview](#overview)
   - [Built With](#built-with)
 - [Features](#features)
 - [How to use](#how-to-use)
-- [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
-
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+![Screenshot from 2022-07-18 14-41-23](https://user-images.githubusercontent.com/84649871/179457409-6839779e-2631-4ce8-8aa5-11a1dfed6df3.png)
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
 - [Tailwind](https://tailwindcss.com/)
+- [Zustand](https://github.com/pmndrs/zustand)
+- [Visual Crossing Weather API)](https://www.visualcrossing.com/)
 
 ## Features
-
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/8Y3J4ucAMQpSnYTwwWW8) was to build an application to complete the given user stories.
 
@@ -64,22 +52,25 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 <!-- For example: -->
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+First, get your API [here](https://www.visualcrossing.com/) then clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/ted-dino/front-end-developer-challenges
+
+# Change directory
+$ cd weather-app
 
 # Install dependencies
 $ npm install
 
 # Run the app
-$ npm start
+$ npm run dev
 ```
 
-## Acknowledgements
+<strong>NOTE</strong>: paste your API in /src/hooks/weatherHook.js in variable named <strong>API_KEY</strong>
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
+## Acknowledgements
 
 - [Weather Forecast API](https://www.visualcrossing.com/)
 - [Weather Icons](https://github.com/visualcrossing/WeatherIcons)
@@ -90,12 +81,6 @@ $ npm start
 - [Import image dynamically in React component](https://stackoverflow.com/questions/53775936/import-image-dynamically-in-react-component#:~:text=8-,for,-anyone%20looking%20for)
 - [How can I pass an SVG and some markup as a React prop?](https://stackoverflow.com/questions/57929557/how-can-i-pass-an-svg-and-some-markup-as-a-react-prop#:~:text=here's%20a%20working%20example%20of%20that%20setup%3A%20)
 - [Converting wind direction in angles to text words](https://stackoverflow.com/questions/7490660/converting-wind-direction-in-angles-to-text-words/7490772#:~:text=38-,here,-'s%20a%20javascript)
-- [How to Use the Geolocation API in Your React App](https://javascript.plainenglish.io/how-to-use-the-geolocation-api-in-your-react-app-54e87c9c6c94#:~:text=by%20the%20way!)-,the,-App.js%20file)
+- [How to Use the Geolocation API in Your React App](https://javascript.plainenglish.io/how-to-use-the-geolocation-api-in-your-react-app-54e87c9c6c94#:~:text=by%20the%20way!)
 - [How to Set Color of Progress Bar using HTML and CSS ?](https://www.geeksforgeeks.org/how-to-set-color-of-progress-bar-using-html-and-css/)
 - [How to compare two arrays in JavaScript ?](https://www.geeksforgeeks.org/how-to-compare-two-arrays-in-javascript/)
-
-## Contact
-
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
