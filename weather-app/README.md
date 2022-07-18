@@ -42,7 +42,7 @@
 - [Vite](https://vitejs.dev/)
 - [Tailwind](https://tailwindcss.com/)
 - [Zustand](https://github.com/pmndrs/zustand)
-- [Visual Crossing Weather API)](https://www.visualcrossing.com/)
+- [Visual Crossing Weather API](https://www.visualcrossing.com/)
 
 ## Features
 
