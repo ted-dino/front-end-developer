@@ -1,6 +1,6 @@
 import create from "zustand";
 
-const API_KEY = "CSKW65FQSTGUR8YJC5JMM7MMA";
+const API_KEY = "YOUR_API_KEY";
 
 const useStore = create((set, get) => ({
   locationWeather: [],
