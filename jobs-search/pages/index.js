@@ -9,7 +9,9 @@ export default function Home() {
         <link rel="icon" href="/devchallenges.png" />
       </Head>
 
-      <main>App</main>
+      <main>
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      </main>
     </div>
   );
 }
