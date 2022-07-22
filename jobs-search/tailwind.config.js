@@ -9,13 +9,18 @@ module.exports = {
       poppins: ["Poppins", "sans-serif"],
       roboto: ["Roboto", "sans-serif"],
     },
-    colors: {
-      primary: "#334680",
-      secondary: "#1E86FF",
-      accent: "#B9BDCF",
-      common: "#B7BCCE",
+
+    extend: {
+      backgroundImage: {
+        searchBG: "url('../public/backgroundImg.png')",
+      },
+      colors: {
+        primary: "#334680",
+        secondary: "#1E86FF",
+        accent: "#B9BDCF",
+        common: "#B7BCCE",
+      },
     },
-    extend: {},
   },
   plugins: [],
 };
