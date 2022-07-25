@@ -82,6 +82,7 @@ $ npm start
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
 
 - [Parsing error : Cannot find module 'next/babel'](https://stackoverflow.com/questions/68163385/parsing-error-cannot-find-module-next-babel#:~:text=8-,for,-Nextjs%2012%20add)
+- [React Pagination](https://youtu.be/6DtBw3PaeHs)
 
 ## Contact
 
