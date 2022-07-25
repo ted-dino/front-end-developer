@@ -4,7 +4,7 @@ const Filter = () => {
   };
   return (
     <div className="min-w-[380px]">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 mb-5">
         <input
           type="checkbox"
           id="fulltime"
@@ -20,11 +20,11 @@ const Filter = () => {
           Full time
         </label>
       </div>
-      <div>
+      <div className="flex flex-col gap-2">
         <span className="uppercase font-poppins font-bold text-accent">
           Location
         </span>
-        <ul>
+        <ul className="flex flex-col gap-2">
           <li className="flex items-center gap-3 text-primary font-poppins font-medium">
             <input
               type="radio"

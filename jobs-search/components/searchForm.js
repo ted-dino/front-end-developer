@@ -6,7 +6,7 @@ const SearchForm = () => {
     console.log(e.target);
   };
   return (
-    <div className="px-5 h-[138px] bg-searchBG flex items-center justify-center rounded-lg mt-7 mb-5 sm:mb-10">
+    <div className="w-full px-5 h-[138px] bg-searchBG flex items-center justify-center rounded-lg mt-7 mb-5 sm:mb-10">
       <form
         onSubmit={handleSubmit}
         className="flex items-center justify-center max-w-[790px] w-full rounded-lg overflow-hidden"
