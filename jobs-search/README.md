@@ -83,6 +83,7 @@ $ npm start
 
 - [Parsing error : Cannot find module 'next/babel'](https://stackoverflow.com/questions/68163385/parsing-error-cannot-find-module-next-babel#:~:text=8-,for,-Nextjs%2012%20add)
 - [React Pagination](https://youtu.be/6DtBw3PaeHs)
+- [How to convert String into a HTML element in Next JS Applcation?](https://stackoverflow.com/questions/67034874/how-to-convert-string-into-a-html-element-in-next-js-applcation#:~:text=9-,as,-you%20want%20to)
 
 ## Contact
 
