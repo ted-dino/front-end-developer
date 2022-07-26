@@ -11,25 +11,23 @@ const Pagination = ({
 }) => {
   return (
     <div className="pages self-end flex items-center gap-3">
-      <button
-        className="previousPage cursor-pointer"
-        onClick={prevPage}
-        disabled={currentPage === pages[0] ? true : false}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 stroke-accent"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
+      {currentPage !== pages[0] && (
+        <button className="previousPage cursor-pointer" onClick={prevPage}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 stroke-accent"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+      )}
       {pages.map((number) => {
         if (number < maxPageNumber + 1 && number > minPageNumber) {
           return (
@@ -50,22 +48,24 @@ const Pagination = ({
           return null;
         }
       })}
-      <button
-        className="nextPage cursor-pointer"
-        onClick={nextPage}
-        disabled={currentPage === pages[pages.length - 1] ? true : false}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 stroke-accent"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+      {currentPage !== pages[pages.length - 1] && (
+        <button className="nextPage cursor-pointer" onClick={nextPage}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 stroke-accent"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      )}
     </div>
   );
 };
