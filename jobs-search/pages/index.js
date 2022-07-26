@@ -5,7 +5,7 @@ import Filter from "../components/filter";
 import JobCard from "../components/jobCard";
 import Pagination from "../components/pagination";
 import Spinner from "../components/spinner";
-import JobContext from "../src/JobsContext";
+import JobContext from "../src/JobContext";
 
 export default function Home() {
   const { data, error, indexOfLastItem, indexOfFirstItem } =

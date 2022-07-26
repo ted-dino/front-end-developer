@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import JobContext from "../src/JobsContext";
+import JobContext from "../src/JobContext";
 
 const Pagination = () => {
   const {

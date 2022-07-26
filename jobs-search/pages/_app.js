@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import Layout from "../components/layout";
-import { JobProvider } from "../src/JobsContext";
+import { JobProvider } from "../src/JobContext";
 
 function MyApp({ Component, pageProps }) {
   return (
