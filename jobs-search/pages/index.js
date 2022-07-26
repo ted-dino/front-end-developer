@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Head from "next/head";
 import SearchForm from "../components/searchForm";
 import Filter from "../components/filter";
@@ -6,6 +6,8 @@ import JobCard from "../components/jobCard";
 import Pagination from "../components/pagination";
 import Spinner from "../components/spinner";
 import JobContext from "../src/JobContext";
+
+import Link from "next/link";
 
 export default function Home() {
   const { data, error, indexOfLastItem, indexOfFirstItem } =
@@ -38,7 +40,9 @@ export default function Home() {
         <div className="flex-1 flex flex-col gap-8">
           <div className="jobs flex flex-col gap-8 w-full">
             {currentItems.map((job, index) => (
-              <JobCard key={index} job={job} />
+              <a key={index} href={`/job/${job.id}`}>
+                <JobCard job={job} />
+              </a>
             ))}
           </div>
           <Pagination />
