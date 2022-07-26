@@ -1,14 +1,46 @@
-import React from "react";
+import { useContext, useState } from "react";
+import JobContext from "../src/JobsContext";
 
-const Pagination = ({
-  pages,
-  currentPage,
-  prevPage,
-  nextPage,
-  maxPageNumber,
-  minPageNumber,
-  pageClick,
-}) => {
+const Pagination = () => {
+  const {
+    data,
+    currentPage,
+    setCurrentPage,
+    maxPageNumber,
+    setMaxPageNumber,
+    setMinPageNumber,
+    minPageNumber,
+    pageNumberLimit,
+    ITEMS_PER_PAGE,
+  } = useContext(JobContext);
+
+  const { jobs } = data;
+  const pages = [];
+  for (let i = 1; i <= Math.ceil(jobs.length / ITEMS_PER_PAGE); i++) {
+    pages.push(i);
+  }
+
+  const nextPage = () => {
+    setCurrentPage(currentPage + 1);
+
+    if (currentPage + 1 > maxPageNumber) {
+      setMaxPageNumber(maxPageNumber + pageNumberLimit);
+      setMinPageNumber(minPageNumber + pageNumberLimit);
+    }
+  };
+  const prevPage = () => {
+    setCurrentPage(currentPage - 1);
+
+    if ((currentPage - 1) % pageNumberLimit == 0) {
+      setMaxPageNumber(maxPageNumber - pageNumberLimit);
+      setMinPageNumber(minPageNumber - pageNumberLimit);
+    }
+  };
+
+  const pageClick = (e) => {
+    setCurrentPage(Number(e.target.id));
+  };
+
   return (
     <div className="pages self-end flex items-center gap-3">
       {currentPage !== pages[0] && (

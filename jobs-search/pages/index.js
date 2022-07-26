@@ -1,58 +1,21 @@
-import { useState } from "react";
-import useSWR from "swr";
+import { useState, useContext } from "react";
 import Head from "next/head";
 import SearchForm from "../components/searchForm";
 import Filter from "../components/filter";
 import JobCard from "../components/jobCard";
 import Pagination from "../components/pagination";
 import Spinner from "../components/spinner";
+import JobContext from "../src/JobsContext";
 
 export default function Home() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [maxPageNumber, setMaxPageNumber] = useState(5);
-  const [minPageNumber, setMinPageNumber] = useState(0);
+  const { data, error, indexOfLastItem, indexOfFirstItem } =
+    useContext(JobContext);
 
-  let pageNumberLimit = 5;
-  const ITEMS_PER_PAGE = 5;
-  const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
-  const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-
-  const fetcher = async (...args) => fetch(...args).then((res) => res.json());
-  const { data, error } = useSWR(
-    "https://remotive.com/api/remote-jobs?limit=100",
-    fetcher
-  );
   if (error) return <div>failed to load</div>;
   if (!data) return <Spinner />;
 
   const { jobs } = data;
   const currentItems = jobs.slice(indexOfFirstItem, indexOfLastItem);
-
-  const pages = [];
-  for (let i = 1; i <= Math.ceil(jobs.length / ITEMS_PER_PAGE); i++) {
-    pages.push(i);
-  }
-
-  const pageClick = (e) => {
-    setCurrentPage(e.target.id);
-  };
-
-  const nextPage = () => {
-    setCurrentPage(currentPage + 1);
-
-    if (currentPage + 1 > maxPageNumber) {
-      setMaxPageNumber(maxPageNumber + pageNumberLimit);
-      setMinPageNumber(minPageNumber + pageNumberLimit);
-    }
-  };
-  const prevPage = () => {
-    setCurrentPage(currentPage - 1);
-
-    if ((currentPage - 1) % pageNumberLimit == 0) {
-      setMaxPageNumber(maxPageNumber - pageNumberLimit);
-      setMinPageNumber(minPageNumber - pageNumberLimit);
-    }
-  };
 
   return (
     <>
@@ -78,15 +41,7 @@ export default function Home() {
               <JobCard key={index} job={job} />
             ))}
           </div>
-          <Pagination
-            pages={pages}
-            currentPage={currentPage}
-            prevPage={prevPage}
-            nextPage={nextPage}
-            maxPageNumber={maxPageNumber}
-            minPageNumber={minPageNumber}
-            pageClick={pageClick}
-          />
+          <Pagination />
         </div>
       </div>
     </>
