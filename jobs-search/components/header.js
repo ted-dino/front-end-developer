@@ -4,8 +4,8 @@ const Header = () => {
     <header>
       <Link href="/">
         <h1 className="text-2xl flex gap-1 font-poppins cursor-pointer">
-          <span className="text-[#282538] font-bold">Github</span>
-          <span className="font-light">Jobs</span>
+          <span className="text-[#282538] font-bold">Jobs</span>
+          <span className="font-light">Search</span>
         </h1>
       </Link>
     </header>
