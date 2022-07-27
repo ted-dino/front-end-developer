@@ -15,7 +15,7 @@ const JobCard = ({ job }) => {
     <div className="job flex items-center gap-4 min-w-full shadow-md bg-white rounded p-3 cursor-pointer">
       <div className="job__logo">
         <Image
-          src={company_logo ? company_logo : "https://via.placeholder.com/90"}
+          src={company_logo ? company_logo : "https://fakeimg.pl/90/"}
           alt="company logo"
           width={90}
           height={90}

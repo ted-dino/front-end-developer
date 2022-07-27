@@ -34,7 +34,7 @@ export default function Home() {
 
       <SearchForm />
 
-      <div className="w-full flex flex-col xl:flex-row gap-8 justify-center">
+      <div className="flex-1 w-full flex flex-col xl:flex-row gap-8 justify-center">
         <Filter />
 
         <div className="flex-1 flex flex-col gap-8">

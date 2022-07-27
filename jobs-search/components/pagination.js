@@ -42,7 +42,7 @@ const Pagination = () => {
   };
 
   return (
-    <div className="pages self-end flex items-center gap-3">
+    <div className="pages mt-auto self-end flex items-center gap-3">
       {currentPage !== pages[0] && (
         <button className="previousPage cursor-pointer" onClick={prevPage}>
           <svg

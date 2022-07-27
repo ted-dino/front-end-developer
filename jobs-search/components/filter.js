@@ -28,18 +28,23 @@ const Filter = () => {
           <li className="flex items-center gap-3 text-primary font-poppins font-medium">
             <input
               type="radio"
-              name="worldwide"
+              name="location"
               id="worldwide"
               className="w-5 h-5"
             />
             <label htmlFor="worldwide">Worldwide</label>
           </li>
           <li className="flex items-center gap-3 text-primary font-poppins font-medium">
-            <input type="radio" name="usa" id="usa" className="w-5 h-5" />
+            <input type="radio" name="location" id="usa" className="w-5 h-5" />
             <label htmlFor="usa">USA Only</label>
           </li>
           <li className="flex items-center gap-3 text-primary font-poppins font-medium">
-            <input type="radio" name="other" id="other" className="w-5 h-5" />
+            <input
+              type="radio"
+              name="location"
+              id="other"
+              className="w-5 h-5"
+            />
             <label htmlFor="other">Other Location</label>
           </li>
         </ul>

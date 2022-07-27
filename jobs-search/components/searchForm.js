@@ -1,9 +1,13 @@
-import React from "react";
+import { useState, useContext } from "react";
+import JobContext from "../src/JobContext";
 
 const SearchForm = () => {
+  const { setQuery } = useContext(JobContext);
+  const [search, setSearch] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    setQuery(search);
   };
   return (
     <div className="w-full px-5 h-[138px] bg-searchBG flex items-center justify-center rounded-lg mt-7 mb-5 sm:mb-10">
@@ -32,7 +36,9 @@ const SearchForm = () => {
           type="text"
           name="query"
           id="query"
+          value={search}
           placeholder="Title, company or expertise"
+          onChange={(e) => setSearch(e.target.value)}
         />
         <div className="bg-white py-1 pr-1">
           <button
