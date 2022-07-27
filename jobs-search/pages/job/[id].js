@@ -109,7 +109,11 @@ const Home = () => {
             </div>
             <div className="company_info flex my-5 gap-2">
               <Image
-                src={selectedJob[0].company_logo_url}
+                src={
+                  selectedJob[0].company_logo_url
+                    ? selectedJob[0].company_logo_url
+                    : "https://via.placeholder.com/42"
+                }
                 alt="company logo"
                 width={42}
                 height={42}

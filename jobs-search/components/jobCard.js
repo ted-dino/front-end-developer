@@ -14,7 +14,12 @@ const JobCard = ({ job }) => {
   return (
     <div className="job flex items-center gap-4 min-w-full shadow-md bg-white rounded p-3 cursor-pointer">
       <div className="job__logo">
-        <Image src={company_logo} alt="company logo" width={90} height={90} />
+        <Image
+          src={company_logo ? company_logo : "https://via.placeholder.com/90"}
+          alt="company logo"
+          width={90}
+          height={90}
+        />
       </div>
       <div className="job__info grid grid-cols-1 md:grid-cols-2 w-full">
         <div className="flex flex-col justify-between flex-1">
