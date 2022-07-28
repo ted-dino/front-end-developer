@@ -2,12 +2,13 @@ import { useState, useContext } from "react";
 import JobContext from "../src/JobContext";
 
 const SearchForm = () => {
-  const { setQuery } = useContext(JobContext);
+  const { jobs, setJobs, setQuery } = useContext(JobContext);
   const [search, setSearch] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setQuery(search);
+    setSearch("");
   };
   return (
     <div className="w-full px-5 h-[138px] bg-searchBG flex items-center justify-center rounded-lg mt-7 mb-5 sm:mb-10">

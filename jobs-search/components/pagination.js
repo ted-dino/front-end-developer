@@ -4,6 +4,7 @@ import JobContext from "../src/JobContext";
 const Pagination = () => {
   const {
     data,
+    jobs,
     currentPage,
     setCurrentPage,
     maxPageNumber,
@@ -14,9 +15,9 @@ const Pagination = () => {
     ITEMS_PER_PAGE,
   } = useContext(JobContext);
 
-  const { jobs } = data;
   const pages = [];
-  for (let i = 1; i <= Math.ceil(jobs.length / ITEMS_PER_PAGE); i++) {
+  const pageNumber = jobs ? jobs : data.jobs;
+  for (let i = 1; i <= Math.ceil(pageNumber.length / ITEMS_PER_PAGE); i++) {
     pages.push(i);
   }
 

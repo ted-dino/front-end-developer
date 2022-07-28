@@ -7,17 +7,16 @@ import Pagination from "../components/pagination";
 import Spinner from "../components/spinner";
 import JobContext from "../src/JobContext";
 
-import Link from "next/link";
-
 export default function Home() {
-  const { data, error, indexOfLastItem, indexOfFirstItem } =
+  const { data, jobs, error, indexOfLastItem, indexOfFirstItem } =
     useContext(JobContext);
 
   if (error) return <div>failed to load</div>;
   if (!data) return <Spinner />;
 
-  const { jobs } = data;
-  const currentItems = jobs.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = jobs
+    ? jobs.slice(indexOfFirstItem, indexOfLastItem)
+    : data.jobs.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <>
@@ -39,13 +38,15 @@ export default function Home() {
 
         <div className="flex-1 flex flex-col gap-8">
           <div className="jobs flex flex-col gap-8 w-full">
-            {currentItems.map((job, index) => (
-              <a key={index} href={`/job/${job.id}`}>
-                <JobCard job={job} />
-              </a>
-            ))}
+            {currentItems && currentItems.length > 0
+              ? currentItems.map((job, index) => (
+                  <a key={index} href={`/job/${job.id}`}>
+                    <JobCard job={job} />
+                  </a>
+                ))
+              : "No data found!"}
           </div>
-          <Pagination />
+          {currentItems && currentItems.length > 0 && <Pagination />}
         </div>
       </div>
     </>

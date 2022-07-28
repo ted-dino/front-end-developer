@@ -10,6 +10,7 @@ export function JobProvider({ children }) {
     `https://remotive.com/api/remote-jobs${query && `${`?search=${query}`}`}`,
     fetcher
   );
+  const [jobs, setJobs] = useState(data);
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPageNumber, setMaxPageNumber] = useState(5);
   const [minPageNumber, setMinPageNumber] = useState(0);
@@ -22,6 +23,8 @@ export function JobProvider({ children }) {
   const values = {
     data,
     error,
+    jobs,
+    setJobs,
     setQuery,
     currentPage,
     setCurrentPage,

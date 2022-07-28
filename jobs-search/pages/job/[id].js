@@ -77,7 +77,7 @@ const Home = () => {
                 <h1 className="font-bold text-primary text-2xl">
                   {selectedJob[0].title}
                 </h1>
-                {selectedJob[0].full_time !== "" && (
+                {selectedJob[0].job_type !== "" && (
                   <span className="py-1.5 px-2 w-max border rounded border-primary text-primary text-xs font-bold">
                     Full time
                   </span>
