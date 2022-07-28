@@ -15,4 +15,7 @@
   #__next {
     @apply container mx-auto flex flex-col min-h-screen pt-2 px-8;
   }
+  .job_description.text-primary > * {
+    @apply !bg-transparent;
+  }
 }
