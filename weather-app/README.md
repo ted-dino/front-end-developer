@@ -56,7 +56,7 @@ First, get your API [here](https://www.visualcrossing.com/) then clone and run t
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/ted-dino/front-end-developer-challenges
+$ git clone https://github.com/ted-dino/front-end-developer-challenges.git
 
 # Change directory
 $ cd weather-app
