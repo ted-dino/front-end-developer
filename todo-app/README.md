@@ -47,7 +47,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/ted-dino/front-end-developer-challenges
+$ git clone https://github.com/ted-dino/front-end-developer-challenges.git
 
 # Change directory
 $ cd todo-app
