@@ -68,7 +68,7 @@ $ npm install
 $ npm run dev
 ```
 
-<strong>NOTE</strong>: paste your API in /src/hooks/weatherHook.js in variable named <strong>API_KEY</strong>
+<strong>NOTE</strong>: paste your API in /src/hooks/weatherHook.js in variable named `API_KEY`
 
 ## Acknowledgements
 
