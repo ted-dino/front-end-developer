@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import JobContext from "../src/JobContext";
 
 const SearchForm = () => {
@@ -11,7 +11,7 @@ const SearchForm = () => {
     setSearch("");
   };
   return (
-    <div className="w-full px-5 h-[138px] bg-searchBG flex items-center justify-center rounded-lg mt-7 mb-5 sm:mb-10">
+    <div className="w-full px-5 h-[138px] header flex items-center justify-center rounded-lg mt-7 mb-5 sm:mb-10">
       <form
         onSubmit={handleSubmit}
         className="flex items-center justify-center max-w-[790px] w-full rounded-lg overflow-hidden"
